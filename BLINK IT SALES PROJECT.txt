@@ -1,0 +1,164 @@
+BLINK IT SALES PROJECT
+
+show databases;
+
+create database blinkit;
+
+use blinkit;
+
+show databases;
+
+show tables;
+
+select * from blinkit;
+
+select item_identifier from blinkit;
+
+select count(item_identifier) from blinkit;
+
+select max(item_weight) from blinkit;
+
+select min(item_weight) from blinkit;
+
+select AVG(item_weight) from blinkit;
+
+select count(item_fat_content) from blinkit
+where item_fat_content = 'Low Fat';
+
+select count(item_fat_content) from blinkit
+where item_fat_content = 'Regular';
+
+select * from blinkit;
+
+select max(item_mrp) from blinkit;
+
+select min(item_mrp) from blinkit;
+
+select * from blinkit;
+
+select item_identifier,item_fat_content,item_type,item_mrp from blinkit where item_mrp>200;
+
+select max(item_mrp) from blinkit where item_fat_content = 'Low fat';
+
+select min(item_mrp) from blinkit where item_fat_content = 'Low fat';
+
+select * from blinkit where item_mrp between 50 and 100;
+
+select distinct item_fat_content from blinkit; 
+
+select distinct item_type from blinkit;
+
+select * from blinkit order by item_mrp desc;
+
+select * from blinkit order by item_outlet_sales asc;
+
+select * from blinkit order by item_type asc;
+
+select * from blinkit;
+
+select * from blinkit where item_type in ('dairy','Meat');
+
+select distinct outlet_type from blinkit;
+
+select item_type , count(item_identifier) as total from blinkit group by item_type order by item_type desc;
+
+select (outlet_size) , count(item_identifier) as total from blinkit group by (outlet_size) order by (outlet_size) asc;
+
+select * from blinkit;
+
+select outlet_size , count(item_identifier) as total from blinkit group by outlet_size order by outlet_size desc;
+
+select outlet_location_type ,
+count(item_identifier) total from blinkit
+group by outlet_location_type order by 
+outlet_location_type desc;
+
+select item_type , max(item_mrp) as max_mrp from blinkit group by item_type;
+
+select item_type , min(item_mrp) as min_mrp from blinkit group by item_type;
+
+select outlet_establishment_year , min(item_mrp) as MRP from blinkit 
+group by outlet_establishment_year 
+order by outlet_establishment_year desc;
+
+select * from blinkit;
+
+select outlet_establishment_year , max(item_mrp) as MRP from blinkit 
+group by outlet_establishment_year 
+order by outlet_establishment_year desc;
+
+select * from blinkit;
+
+select outlet_size , round(AVG(item_mrp)) avg from blinkit 
+group by outlet_size
+order by outlet_size desc;
+
+select outlet_type , round(AVG(item_mrp)) avg from blinkit 
+group by outlet_type
+order by outlet_type desc;
+
+select outlet_type , MAX(item_mrp) max from blinkit group by outlet_type order by max asc;
+
+select item_type , max(item_weight) max from blinkit group by item_type;
+
+select item_type , min(item_weight) min from blinkit group by item_type;
+
+select outlet_location_type ,round(avg(item_weight)) min from blinkit group by outlet_location_type;
+
+select outlet_establishment_year , max(item_weight) max from blinkit group by outlet_establishment_year;
+
+select item_type , max(item_outlet_sales) max_sales from blinkit group by item_type;
+
+select item_type , min(item_outlet_sales) max_sales from blinkit group by item_type;
+
+select outlet_establishment_year , min(item_outlet_sales) max_sales from blinkit group by outlet_establishment_year;
+
+select outlet_establishment_year , min(item_outlet_sales) max_sales from blinkit group by outlet_establishment_year
+order by outlet_establishment_year desc;
+
+select outlet_size , round(avg(item_outlet_sales)) avg from blinkit group by outlet_size order by outlet_size desc;
+
+select outlet_type , round(avg(item_outlet_sales)) avg from blinkit group by outlet_type;
+
+select outlet_type , round(max(item_outlet_sales)) max from blinkit group by outlet_type;
+
+select outlet_type , round(min(item_outlet_sales)) min from blinkit group by outlet_type;
+
+select outlet_type , round(sum(item_outlet_sales)) as total from blinkit group by outlet_type;
+
+select item_fat_content , round(sum(item_outlet_sales)) as total from blinkit group by item_fat_content;
+
+select * from blinkit;
+
+select item_type , MAX(item_visibility) max from blinkit group by item_type;
+
+select item_type , min(item_visibility) min from blinkit group by item_type;
+
+select item_type,outlet_location_type,
+sum(item_outlet_sales) total from blinkit
+where outlet_location_type = 'Tier 1'
+group by item_type;
+
+select item_type,item_fat_content,
+sum(item_outlet_sales) total from blinkit
+where item_fat_content = ('Low fat'and'LF')
+group by item_type;
+
+select item_type,item_fat_content,
+Round(sum(item_outlet_sales)) total from blinkit
+where item_fat_content = ('Low fat'and'LF')
+group by item_type;
+
+
+select * from blinkit;
+
+
+
+
+
+
+
+
+
+
+
